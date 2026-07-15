@@ -1,2 +1,24 @@
-# etwork-threat-analytics-pipeline
-"End-to-end analytics pipeline for network intrusion detection  Python ETL, PostgreSQL star schema, and Power BI dashboard for visualizing attack patterns in network traffic data." If you want something a bit shorter (GitHub descriptions work best under ~150 characters): "Python + PostgreSQL + Power BI pipeline analyzing network traffic "
+network-intrusion-detection-analytics/
+│
+├── data/
+│   ├── raw/              # Original CICIDS2017 CSV files (not committed — see .gitignore)
+│   └── processed/        # Cleaned data ready for loading
+│
+├── src/
+│   ├── extract.py        # Reads and consolidates raw CSVs
+│   ├── transform.py       # Cleans data, handles nulls/infinities, engineers features
+│   └── load.py            # Loads cleaned data into PostgreSQL
+│
+├── sql/
+│   └── schema.sql          # DDL for fact and dimension tables
+│
+├── notebooks/
+│   └── exploration.ipynb  # Initial data exploration and quality checks
+│
+├── dashboard/
+│   └── network_intrusion_dashboard.pbix   # Power BI file
+│
+├── main.py                # Runs extract → transform → load in sequence
+├── requirements.txt        # Python dependencies
+├── .gitignore
+└── README.md
